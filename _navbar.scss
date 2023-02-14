@@ -1,0 +1,100 @@
+@import 'colors';
+@import 'media-queries';
+
+
+%align-center{
+    display: flex;
+    align-items: center;
+}
+
+.navbar{
+    background-color: $light;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    z-index: 10;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0.7, 0.7, 0.7, 0.7);
+
+    &_logo{
+        color: $dark;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 2rem;
+        margin-left: 20px;
+        @extend %align-center;
+    }
+
+    &_bars{
+       opacity: 0;
+
+
+       @include tablet{
+        color: $dark;
+        opacity: 1;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 2rem;
+       }
+    }
+
+    &_menu{
+        @extend %align-center;
+        text-align: center;
+        margin-right: 20px;
+        
+        @include tablet{
+            display: none;
+        }
+
+       
+
+        ul{
+            list-style: none;
+            @extend %align-center;
+            justify-content: center;
+            
+        
+        }
+
+        &-link{
+            color: $dark;
+            
+            justify-content: center;
+            text-decoration: none;
+            padding: 0 1rem;
+            cursor: pointer;
+
+           
+          &:hover{
+            color: $light;
+            transition: all 0.3s ease;
+
+          }
+
+         
+        }    
+
+       
+    }
+}
+
+#button{
+    padding: 10px 20px;
+    background-color: $line;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    margin-left: 15px;
+    color: $light;
+    text-decoration: none;
+
+    &:hover{
+        background-color: $orangeRed;
+        transition: all 0.3s ease;
+    }
+
+}
+
